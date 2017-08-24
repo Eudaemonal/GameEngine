@@ -162,7 +162,6 @@ public class PolygonalGameObject extends GameObject {
 	    	for(double[] point: points)
 	    		gl.glVertex2d(point[0], point[1]);
 	    	
-	    	
 	    	gl.glEnd();
     	}
     	
