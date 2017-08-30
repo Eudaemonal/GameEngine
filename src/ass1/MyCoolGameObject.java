@@ -1,17 +1,19 @@
 package ass1;
 
+import com.jogamp.opengl.GL2;
+
 public class MyCoolGameObject extends GameObject{
-	public MyCoolGameObject(GameObject parent) {
+	private double theta = 45;
+	
+	  public MyCoolGameObject(GameObject parent) {
 	    super(parent);
-	    drawMyCoolGameObject();
 	  }
 	  
 	  public MyCoolGameObject() {
 	    super(GameObject.ROOT);
-	    drawMyCoolGameObject();
 	  }
 	  
-	  private void drawMyCoolGameObject() {
+	  public void drawSelf(GL2 gl) {
 		    double[] black = {0,0,0,1};
 		    double[] white = {1,1,1,1};
 		    double[] grey90 = {0.9,0.9,0.9,1};
@@ -25,6 +27,8 @@ public class MyCoolGameObject extends GameObject{
 		    double[] grey10 = {0.1,0.1,0.1,1};
 		    double[] blue = {0, 0.6, 0.8, 1};
 		    
+		    // Draw black background for animation
+		    CircularGameObject backGround = new CircularGameObject(this, 102, black, black);
 		    // Create main frame of the helicoptor
 		    //PolygonalGameObject body = new PolygonalGameObject()
 		    PolygonalGameObject mainFrame = new PolygonalGameObject(this,
@@ -83,47 +87,48 @@ public class MyCoolGameObject extends GameObject{
 		    // Draw roter and blade
 		    GameObject roter = new GameObject(mainFrame);
 		    PolygonalGameObject bladeRoot1 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
-		    		grey40, white);
+		    		grey40, black);
 		    PolygonalGameObject bladeFrame1 = new PolygonalGameObject(bladeRoot1, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
-		    		grey40, white);
-		    PolygonalGameObject bladeTip1 = new PolygonalGameObject(bladeFrame1, new double[]{95,0, 100,3, 100,8, 95,5},
-		    		grey40, white);
+		    		grey40, black);
+		    PolygonalGameObject bladeTip1 = new PolygonalGameObject(bladeFrame1, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    		grey40, black);
 		    bladeRoot1.setRotation(0);
 		    
 		    PolygonalGameObject bladeRoot2 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
-		    		grey40, white);
+		    		grey40, black);
 		    PolygonalGameObject bladeFrame2 = new PolygonalGameObject(bladeRoot2, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
-		    		grey40, white);
-		    PolygonalGameObject bladeTip2 = new PolygonalGameObject(bladeFrame2, new double[]{95,0, 100,3, 100,8, 95,5},
-		    		grey40, white);
+		    		grey40, black);
+		    PolygonalGameObject bladeTip2 = new PolygonalGameObject(bladeFrame2, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    		grey40, black);
 		    bladeRoot2.setRotation(90);
 		    
 		    PolygonalGameObject bladeRoot3 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
-		    		grey40, white);
+		    		grey40, black);
 		    PolygonalGameObject bladeFrame3 = new PolygonalGameObject(bladeRoot3, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
-		    		grey40, white);
-		    PolygonalGameObject bladeTip3 = new PolygonalGameObject(bladeFrame3, new double[]{95,0, 100,3, 100,8, 95,5},
-		    		grey40, white);
+		    		grey40, black);
+		    PolygonalGameObject bladeTip3 = new PolygonalGameObject(bladeFrame3, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    		grey40, black);
 		    bladeRoot3.setRotation(180);
 		    
 		    PolygonalGameObject bladeRoot4 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
-		    		grey40, white);
+		    		grey40, black);
 		    PolygonalGameObject bladeFrame4 = new PolygonalGameObject(bladeRoot4, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
-		    		grey40, white);
-		    PolygonalGameObject bladeTip4 = new PolygonalGameObject(bladeFrame4, new double[]{95,0, 100,3, 100,8, 95,5},
-		    		grey40, white);
+		    		grey40, black);
+		    PolygonalGameObject bladeTip4 = new PolygonalGameObject(bladeFrame4, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    		grey40, black);
 		    bladeRoot4.setRotation(270);
-		    
 		    CircularGameObject roterDisc = new CircularGameObject(roter, 5, grey70, black);
 		   
-		    roter.rotate(45);
+		    roter.rotate(theta);
 		    
-
-
 		    
 		    // Set scale to fit
 		    this.setScale(0.005);
-		    this.setPosition(0, 0.2);
-
+		    this.setPosition(0, 0);
+	  }
+	  
+	  public void update(double dt) {
+		  theta += 10;
+		  theta = ((theta + 180.0) % 360.0 + 360.0) % 360.0 - 180.0;
 	  }
 }
