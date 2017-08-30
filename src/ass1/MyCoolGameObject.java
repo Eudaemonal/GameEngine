@@ -39,7 +39,7 @@ public class MyCoolGameObject extends GameObject{
 		    // Draw Engine
 		    GameObject engine = new GameObject(mainFrame);
 		    PolygonalGameObject hood = new PolygonalGameObject(engine,
-		    	      new double[]{-10,50, -10,10, -5,2, -3.5,1, 0,0, 3.5,1, 5,2, 10,10, 10,50, 0,70},
+		    	      new double[]{-10,50, -10,10, -5,2, -3.5,1, 0,0, 3.5,1, 5,2, 10,10, 10,50, 2,70, -2,70},
 		    	      grey60,
 		    	      black);
 		    PolygonalGameObject leftEngine = new PolygonalGameObject(engine, new double[]{10,12, 15,12, 16,20, 16,35, 15,40, 10,50, 9,35, 9,20},
@@ -47,7 +47,7 @@ public class MyCoolGameObject extends GameObject{
 		    PolygonalGameObject rightEngine = new PolygonalGameObject(engine, new double[]{-10,12, -15,12, -16,20, -16,35, -15,40, -10,50, -9,35, -9,20},
 		    		  grey50, black);
 		    
-		    engine.setPosition(0, -16);
+		    engine.setPosition(0, -20);
 		    
 		    
 		    // Draw window
@@ -62,7 +62,7 @@ public class MyCoolGameObject extends GameObject{
 		    		  blue, white);
 		    PolygonalGameObject rightUpperWindow = new PolygonalGameObject(window, new double[]{-4,10, -12,11, -14,13, -15,16, -4,16},
 		    		  blue, white);
-		    window.setPosition(0,-35);
+		    window.setPosition(0,-37);
 		    
 		    
 		    // Draw tail
@@ -86,35 +86,35 @@ public class MyCoolGameObject extends GameObject{
 		    
 		    // Draw roter and blade
 		    GameObject roter = new GameObject(mainFrame);
-		    PolygonalGameObject bladeRoot1 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
+		    PolygonalGameObject bladeRoot1 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,-2, 0,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeFrame1 = new PolygonalGameObject(bladeRoot1, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
+		    PolygonalGameObject bladeFrame1 = new PolygonalGameObject(bladeRoot1, new double[]{10,0, 95,0, 95,-5, 15,-5, 10,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeTip1 = new PolygonalGameObject(bladeFrame1, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    PolygonalGameObject bladeTip1 = new PolygonalGameObject(bladeFrame1, new double[]{95,0, 100,-3, 100,-8, 95,-5},
 		    		grey40, black);
 		    bladeRoot1.setRotation(0);
-		    
-		    PolygonalGameObject bladeRoot2 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
+		   
+		    PolygonalGameObject bladeRoot2 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,-2, 0,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeFrame2 = new PolygonalGameObject(bladeRoot2, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
+		    PolygonalGameObject bladeFrame2 = new PolygonalGameObject(bladeRoot2, new double[]{10,0, 95,0, 95,-5, 15,-5, 10,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeTip2 = new PolygonalGameObject(bladeFrame2, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    PolygonalGameObject bladeTip2 = new PolygonalGameObject(bladeFrame2, new double[]{95,0, 100,-3, 100,-8, 95,-5},
 		    		grey40, black);
 		    bladeRoot2.setRotation(90);
 		    
-		    PolygonalGameObject bladeRoot3 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
+		    PolygonalGameObject bladeRoot3 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,-2, 0,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeFrame3 = new PolygonalGameObject(bladeRoot3, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
+		    PolygonalGameObject bladeFrame3 = new PolygonalGameObject(bladeRoot3, new double[]{10,0, 95,0, 95,-5, 15,-5, 10,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeTip3 = new PolygonalGameObject(bladeFrame3, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    PolygonalGameObject bladeTip3 = new PolygonalGameObject(bladeFrame3, new double[]{95,0, 100,-3, 100,-8, 95,-5},
 		    		grey40, black);
 		    bladeRoot3.setRotation(180);
 		    
-		    PolygonalGameObject bladeRoot4 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,2, 0,2},
+		    PolygonalGameObject bladeRoot4 = new PolygonalGameObject(roter, new double[]{0,0, 20,0, 20,-2, 0,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeFrame4 = new PolygonalGameObject(bladeRoot4, new double[]{10,0, 95,0, 95,5, 15,5, 10,2},
+		    PolygonalGameObject bladeFrame4 = new PolygonalGameObject(bladeRoot4, new double[]{10,0, 95,0, 95,-5, 15,-5, 10,-2},
 		    		grey40, black);
-		    PolygonalGameObject bladeTip4 = new PolygonalGameObject(bladeFrame4, new double[]{95,0, 100,-3, 100,2, 95,5},
+		    PolygonalGameObject bladeTip4 = new PolygonalGameObject(bladeFrame4, new double[]{95,0, 100,-3, 100,-8, 95,-5},
 		    		grey40, black);
 		    bladeRoot4.setRotation(270);
 		    CircularGameObject roterDisc = new CircularGameObject(roter, 5, grey70, black);
